@@ -1,0 +1,30 @@
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zs
+# ----------------------------
+# General aliases
+# ----------------------------
+alias o='open .'
+alias c='code'
+# ----------------------------
+# Git aliases
+# ----------------------------
+alias ga='git add'
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gp='git pull'
+alias gpsh='git push'
+alias gchkb='git checkout -b'
+alias gchk='git checkout'
+alias gs='git status'
+alias gm='git merge'
+# ----------------------------
+# Kubectl aliases
+# ----------------------------
+alias k='kubectl'
+# ----------------------------
+# Flux aliases
+# ----------------------------
+alias fgk='flux get kustomization'
+alias fsk='flux suspend kustomization'
+alias frk='flux resume kustomization'
