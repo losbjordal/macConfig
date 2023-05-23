@@ -24,6 +24,7 @@ if [ -x "$(command -v brew)" ]; then
     brew install gpg2 gnupg pinentry-mac  
     brew tap microsoft/git
     brew install --cask git-credential-manager-core
+
 else
     echo "brew not found"
 fi
