@@ -18,6 +18,7 @@ if [ -x "$(command -v brew)" ]; then
     brew install --cask rectangle 
     brew install --cask powershell
     brew install azure-cli
+    brew install --cask zenmap
 
     # https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
     # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git

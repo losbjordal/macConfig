@@ -2,6 +2,8 @@
 
 cp home/* $HOME
 
+# will likely be created manually to pull this repo
 mkdir $HOME/git
+
 # crate update all git file
-# https://gist.github.com/douglas/1287372
+cp update_git_repos.sh $HOME/git/update_git_repos.sh
