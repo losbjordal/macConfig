@@ -93,14 +93,25 @@ source $ZSH/oh-my-zsh.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# users are encouragqed to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+function pw(){
+    SECONDS=$(date '+%s')
+    GENRAND=$((RANDOM))
+    echo $(expr $SECONDS \* $GENRAND) | shasum |  sed 's/|/ /' | awk '{print $1, $8}' | base64 | cut -c 1-24
+}
+
+alias kk='kubectl kustomize --enable-helm'
 alias ll="ls -la"
-alias kk="kustomize build"
+alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias isodate='(date '+%Y%m%d%H%M')'
+alias pass='(date +%s | shasum | base64 | head -c 32 ; echo)'
+e64(){print $1|base64}
+d64(){print $1|base64 -d}
 
 autoload -Uz vcs_info
 precmd() { vcs_info }
@@ -108,7 +119,14 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 
 setopt PROMPT_SUBST
-PROMPT='%F{white}%*%f %F{green}%~%f %F{red}( ${vcs_info_msg_0_})%f 
-%F{yellow}>%f '
+PROMPT='%F{white}%*%f %F{green}%~%f %F{red}( ${vcs_info_msg_0_})%f
+'
 
+# PROMPT='%F{white}%*%f %F{green}%~%f %F{red}( ${vcs_info_msg_0_})%f
+# %F{yellow}>%f '
 export GPG_TTY=$(tty)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"

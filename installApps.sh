@@ -4,9 +4,9 @@
 # installation of brew requires more steps
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-## test if brew is installed    
+## test if brew is installed
 
-if [ -x "$(command -v brew)" ]; then 
+if [ -x "$(command -v brew)" ]; then
     echo "brew found"
 
     brew install kubectl
@@ -16,15 +16,15 @@ if [ -x "$(command -v brew)" ]; then
     brew install flux
     brew install go
     brew install helm
-    brew install --cask alt-tab 
-    brew install --cask rectangle 
+    brew install --cask alt-tab
+    brew install --cask rectangle
     brew install --cask powershell
     brew install azure-cli
-    brew install --cask zenmap
+    #brew install --cask zenmap # install via gui
 
     # https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
     # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
-    brew install gpg2 gnupg pinentry-mac  
+    brew install gpg2 gnupg pinentry-mac
     brew tap microsoft/git
     brew install --cask git-credential-manager-core
 
