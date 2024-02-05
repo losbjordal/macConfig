@@ -15,7 +15,11 @@ if [ -x "$(command -v brew)" ]; then
     brew install age
     brew install flux
     brew install go
+    brew install vault
+    brew install argocd
     brew install helm
+    brew install ripgrep
+    brew install yq jq
     brew install --cask alt-tab
     brew install --cask rectangle
     brew install --cask powershell
