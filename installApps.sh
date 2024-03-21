@@ -20,6 +20,7 @@ if [ -x "$(command -v brew)" ]; then
     brew install helm
     brew install ripgrep
     brew install yq jq
+    brew install velero
     brew install --cask alt-tab
     brew install --cask rectangle
     brew install --cask powershell
