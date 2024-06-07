@@ -107,12 +107,13 @@ function pw(){
     echo $(expr $SECONDS \* $GENRAND) | shasum |  sed 's/|/ /' | awk '{print $1, $8}' | base64 | cut -c 1-24
 }
 
-alias kk='kubectl kustomize --enable-helm|yq'
+alias kk='kustomize build --enable-helm|yq'
 alias ll="ls -la"
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias isodate='(date '+%Y%m%d%H%M')'
 alias pass='(date +%s | shasum | base64 | head -c 32 ; echo)'
 alias date='date -Iseconds'
+alias yless='yq -C eval-all | less -R'
 e64(){print $1|base64}
 d64(){print $1|base64 -d}
 
@@ -142,15 +143,16 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 ## ----------- completion ------------ ##
 # https://thevaluable.dev/zsh-completion-guide-examples/
-#autoload -Uz compinit
-#compinit
 # kubectl autocompletion
-if [ $commands[kubectl] ]; then source <(kubectl completion zsh); compdef _kubectl kubectl; fi
+#if [ $commands[kubectl] ]; then source <(kubectl completion zsh); compdef _kubectl kubectl; fi
 # helm autocompletion
-if [ $commands[helm] ]; then source <(helm completion zsh); compdef _helm helm; fi
+#if [ $commands[helm] ]; then source <(helm completion zsh); compdef _helm helm; fi
 # oc autocompleteion
-if [ $commands[oc] ]; then source <(oc completion zsh); compdef _oc oc; fi
+#if [ $commands[oc] ]; then source <(oc completion zsh); compdef _oc oc; fi
 # flux completion
-if [ $commands[flux] ]; then source <(flux completion zsh); compdef _flux flux; fi
-if [ $commands[argocd] ]; then source <(argocd completion zsh); compdef _argocd argocd; fi
-if [ $commands[velero] ]; then source <(velero completion zsh); compdef _velero velero; fi
+#if [ $commands[flux] ]; then source <(flux completion zsh); compdef _flux flux; fi
+#if [ $commands[argocd] ]; then source <(argocd completion zsh); compdef _argocd argocd; fi
+#if [ $commands[velero] ]; then source <(velero completion zsh); compdef _velero velero; fi
+autoload bashcompinit && bashcompinit
+source $(brew --prefix)/etc/bash_completion.d/az
+autoload -Uz compinit && compinit
