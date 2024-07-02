@@ -13,7 +13,7 @@ if [ -x "$(command -v brew)" ]; then
     brew install openshift-cli
     brew install sops
     brew install age
-    brew install flux
+    brew install fluxcd/tap/flux
     brew install go
     brew install vault
     brew install argocd
