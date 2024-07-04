@@ -25,13 +25,20 @@ if [ -x "$(command -v brew)" ]; then
     brew install --cask rectangle
     brew install --cask powershell
     brew install azure-cli
+    #brew install npm
+    #brew install yarn
+    brew install nvm
     #brew install --cask zenmap # install via gui
 
     # https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
+
+    # GitHub, install GPGSuit
     # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
-    brew install gpg2 gnupg pinentry-mac
-    brew tap microsoft/git
-    brew install --cask git-credential-manager-core
+    # https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+
+    #brew install gpg2 gnupg pinentry-mac
+    #brew tap microsoft/git
+    #brew install --cask git-credential-manager-core
 
 else
     echo "brew not found"
