@@ -25,9 +25,12 @@ if [ -x "$(command -v brew)" ]; then
     brew install --cask rectangle
     brew install --cask powershell
     brew install azure-cli
+    brew install kustomize
+    brew install lnav
     #brew install npm
     #brew install yarn
     brew install nvm
+    brew install k9s
     #brew install --cask zenmap # install via gui
 
     # https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
