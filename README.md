@@ -8,8 +8,9 @@ Run home/setup.sh to copy all config files to the home directory
 - github desktop
 - docker desktop
 
-after installApps.sh 
+after installApps.sh
 - oh-my-zsh
+- https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#for-new-users
 
 ## install from app store
 - azure vpn client
@@ -20,7 +21,7 @@ run installApps.sh
 - brew
 - iterm2
 - openshift-cli
-- kubectl 
+- kubectl
 - flux
 - sops
 - age
@@ -28,8 +29,8 @@ run installApps.sh
 
 ## todo
 - vim setup
-- change terminal and copy 
-- hack (font)
+- change terminal and copy
+- MesloLGS NF Regular.ttfs
 
 
 storage explorer
